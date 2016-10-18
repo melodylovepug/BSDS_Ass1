@@ -150,6 +150,7 @@ public class CAServer implements BSDSPublishInterface, BSDSSubscribeInterface, B
         //System.out.println("Getting content for topic :" +subscriberID);
         //System.out.println("Topic with Overall Id" + topicwithOverallId);
         String messgaereturn;
+        messgaereturn = "";
         int lastpos ;
 
         if(countForEachTopic.containsKey(subscriberID) &&  (countForEachTopic.get(subscriberID) >0)) {

@@ -53,7 +53,7 @@ topic[0] local host, topic[1] number of threads, topic[2] Topic, arg[3] number o
 
                 for (int nums = 0; nums < pos; nums++) {
                     String message = Integer.toString(nums);
-                    CAServerStub.publishContent(topic1, message, 30000);
+                    CAServerStub.publishContent(topic1, message, 50000);
                     countOfMessageSend++;
                 }
 
