@@ -44,7 +44,7 @@ args[0] local host, args[1] Topic, arg[2] number of message want, args[3] topic.
 
 
 
-
+                CAServerStub.registerSubscriber(topic);
                 Integer countOfMessageRecieved = 0;
 
                 long requestNew = 100;
@@ -56,13 +56,13 @@ args[0] local host, args[1] Topic, arg[2] number of message want, args[3] topic.
                 for (int i = 0; i < num; i++) {
                     String messagereturn = CAServerStub.getLatestContent(hashtopic);
 
-                    while ( messagereturn.equals("No message for this topic ") && (requestNew < 6000)) {
+                    while ( messagereturn.equals("No message for this topic ") && (requestNew < 60000)) {
                         System.out.println("Sleep Time：" + requestNew);
                         requestNew *= 2;
                         Thread.sleep(requestNew);
                         messagereturn = CAServerStub.getLatestContent(hashtopic);
                     }
-                    if (requestNew >= 6000)
+                    if (requestNew >= 60000)
                         break;
                     //System.out.println("Message return #:" + countOfMessageRecieved);
                     countOfMessageRecieved++;

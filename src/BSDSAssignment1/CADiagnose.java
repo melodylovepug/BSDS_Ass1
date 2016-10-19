@@ -24,7 +24,7 @@ public class CADiagnose {
         //args[2] topic 2
         String host = (args.length < 1) ? null : args[0];
         try {
-            Thread.sleep(5000);
+            Thread.sleep(7500);
             System.out.println ("Diagnose Client Starter");
             Registry registry = LocateRegistry.getRegistry(host);
             System.out.println ("Connected to registry");
@@ -32,7 +32,7 @@ public class CADiagnose {
             System.out.println ("Diagnose initialized");
             // add new topics
             while(true) {
-                Thread.sleep(400);
+                Thread.sleep(1000);
                 int len = args.length;
                 for (int i = 1; i < len; i++) {
                     String contentarray = args[i];

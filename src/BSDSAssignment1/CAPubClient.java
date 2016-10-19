@@ -31,8 +31,12 @@ class PubThread extends Thread {
                 pos = pos1;
                 this.host = host;
             }
+
             public void run(){
         try {
+          /*  try
+            {sleep(5000);} catch(InterruptedException e){}
+*/
             System.out.println ("Publisher Client Starter");
             Registry registry = LocateRegistry.getRegistry(host, 1099);
             System.out.println ("Connected to registry");

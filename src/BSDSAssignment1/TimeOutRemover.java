@@ -17,7 +17,8 @@ public class TimeOutRemover  extends  Thread implements  Runnable{
     public  void run(){
         while(true){
             try
-            {sleep(5000);} catch(InterruptedException e){}
+            {sleep(100);} catch(InterruptedException e){}
+
             System.out.println("In the remove progress");
 
 
@@ -26,7 +27,7 @@ public class TimeOutRemover  extends  Thread implements  Runnable{
             CAServer.timestamp_Id found = pub.timerqueue.peek();
             while(found != null)
             {
-                 try{sleep(2000);} catch(InterruptedException e){}
+                /* try{sleep(2000);} catch(InterruptedException e){}*/
                 CAServer.timestamp_Id cur = found;
                 long cur_time = System.currentTimeMillis();
                 long cur_timestamp = cur.TimeStamp;

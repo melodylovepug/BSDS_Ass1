@@ -163,13 +163,16 @@ public class CAServer implements BSDSPublishInterface, BSDSSubscribeInterface, B
 
 
             //remove if idwithCount.val = topicsubscriberCount.val
-            if (!idwithCount.containsKey(lastpos)) {
-                idwithCount.put(lastpos, 0);
-            }
+
+                idwithCount.put(subscriberID, 1);
+                System.out.println("why messed up ");
+            //System.out.println(topicSubscriberCount);
+            //System.out.println(subscriberID);
             if (topicSubscriberCount.containsKey(subscriberID)) {
-                Integer count1 = idwithCount.get(lastpos);
-                count1++;
+                Integer count1 = idwithCount.get(subscriberID);
+
                 Integer count2 = topicSubscriberCount.get(subscriberID);
+                System.out.println(count1 +"count" + count2);
                 if (count1 == count2) {
                     //remove when message is delivered to all subscriber
                     System.out.println("Starts delete if count is a match");
